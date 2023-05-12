@@ -28,7 +28,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='#'><button  className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>Login</button></Link>
+                <Link to='/login'><button  className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>Login</button></Link>
             </div>
         </div>
     );

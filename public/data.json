@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "disease_name": "Common Cold",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Sore throat, ", "Runny nose, ", "Cough, ", "Congestion, "],
+      "treatment": "Rest, fluids, over-the-counter medications",
+      "prevention": "Frequent handwashing, avoiding close contact with sick individuals"
+    },
+    {
+      "id": 2,
+      "disease_name": "Headache",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Head pain ,", "Pressure or tightness in the head, ", "Sensitivity to light or sound,"],
+      "treatment": "Over-the-counter pain relievers, rest, stress reduction",
+      "prevention": "Maintaining a healthy lifestyle, managing stress"
+    },
+    {
+      "id": 3,
+      "disease_name": "Influenza",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Fever, ", "Cough, ", "Body aches, ", "Fatigue, "],
+      "treatment": "Rest, fluids, antiviral medications (if prescribed)",
+      "prevention": "Annual flu vaccination, practicing good hygiene"
+    },
+    {
+      "id": 4,
+      "disease_name": "Allergies",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Sneezing ,", "Itchy or watery eyes, ", "Runny nose, ", "Skin rash,"],
+      "treatment": "Antihistamines, nasal sprays, avoiding allergens",
+      "prevention": "Identifying and avoiding triggers, keeping indoor environments clean"
+    },
+    {
+      "id": 5,
+      "disease_name": "Migraine",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Intense headache, ", "Nausea,", "Sensitivity to light and sound, ", "Aura (in some cases)"],
+      "treatment": "Pain-relieving medications, rest in a quiet, dark room",
+      "prevention": "Identifying triggers, managing stress, regular sleep patterns"
+    },
+    {
+      "id": 6,
+      "disease_name": "Stomach Flu (Gastroenteritis)",
+      "img": "https://i.ibb.co/rHCyNL8/banner-2.jpg",
+      "symptoms": ["Nausea, ", "Vomiting, ", "Diarrhea, ", "Abdominal pain, "],
+      "treatment": "Oral rehydration, rest, avoiding solid foods temporarily",
+      "prevention": "Frequent handwashing, avoiding contaminated food and water"
+    }
+  ]
+  
