@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { signIn, googleLogin } = useContext(AuthContext)
+
+
+    const loginUserHandler = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(res => {
+                const loggedIn = res.user
+                console.log(loggedIn);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+        form.reset();
+
+    }
+
+    // google login
+    const googleLoginHandler = () => {
+        googleLogin()
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error.message))
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -10,7 +42,7 @@ const Login = () => {
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={loginUserHandler} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -31,6 +63,10 @@ const Login = () => {
                         </div>
                         <p className='text-center'>Don't have Account? <Link to='/signup' className='underline hover:text-blue-600 active:scale-90'> Create an account</Link> </p>
                     </form>
+                    <div className='text-center mb-10'>
+                        <p className='mb-6'>------ Or ------</p>
+                        <button onClick={googleLoginHandler} className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>Google</button>
+                    </div>
                 </div>
             </div>
         </div>

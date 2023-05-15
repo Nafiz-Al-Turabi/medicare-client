@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link>About</Link></li>
@@ -9,6 +11,16 @@ const NavBar = () => {
         <li><Link>Blog</Link></li>
         <li><Link>Contact</Link></li>
     </>
+
+    const logOutHandler = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -28,7 +40,14 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><button  className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>Login</button></Link>
+                {
+                    user ?
+                        <>
+                        <p className='mr-3'>{user.email}</p>
+                        <button onClick={logOutHandler} className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>LogOut</button>
+                        </>
+                        : <Link to='/login'><button className='bg-[#0cb8b6] py-3 px-5 text-white font-semibold rounded-lg hover:bg-[#017c7a] duration-100 active:scale-95'>Login</button></Link>
+                }
             </div>
         </div>
     );
